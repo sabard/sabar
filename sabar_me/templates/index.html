@@ -1,10 +1,10 @@
 <html>
   <head>
     <title>Sabar Dasgupta</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/index.css') }}">
     <script type="text/javascript" src="brython.js"></script>
     <script type="text/javascript" src="brython_stdlib.js"></script>
-  </head>
-  <body onload="brython(1)">
+
     <script type="text/python3">
       from browser import document, ajax
       import json
@@ -29,8 +29,23 @@
 
       document["predict_button"].bind("click", get_prediction)
     </script>
-    <textarea id="user_input"></textarea>
-    <button id="predict_button">Predict!</button>
-    <div id="result"></div>
+  </head>
+  <body onload="brython(1)">
+    <header>
+    </header>
+    <nav>
+      <a href="/blog">Blog</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/photos">Photos</a>
+      <a href="/audio">Audio</a>
+    </nav>
+    <div id="welcome">
+    Welcome to the Park</br>
+    </div>
+<!--     <div>
+      <textarea id="user_input"></textarea>
+      <button id="predict_button">Predict!</button>
+    </div>
+    <div id="result"></div> -->
   </body>
 </html>
