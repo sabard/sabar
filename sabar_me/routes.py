@@ -7,21 +7,22 @@ from .graphql_schemas import schema
 
 CORS(app)
 
+
 @app.route('/')
 def index():
     """Return the main page."""
     return render_template('index.html')
 
 
-@app.route('/blog')
-def blog():
-    """Return the blog page."""
-    return render_template('blog.html')
+@app.route('/articles')
+def articles():
+    """Return the articles page."""
+    return render_template('articles.html')
 
-@app.route('/blog/<id>')
-def blog_post(id):
-    """Return a blog post view."""
-    return render_template('blog_post.html')
+@app.route('/articles/<article_id>')
+def article(article_id):
+    """Return the article view."""
+    return render_template('article.html', article_id=article_id)
 
 
 @app.route('/portfolio')

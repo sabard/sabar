@@ -3,7 +3,7 @@
     <title>Sabar's Blog</title>
     {% include "global_imports.html" %}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/other.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/blog.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/writing.css') }}">
 
     <script type="text/python3">
       from browser import document, html
@@ -31,7 +31,7 @@
         title_text = document.createTextNode(article_data["title"]);
         a.appendChild(title_text);
         a.title = article_data["title"]
-        a.href = f"{root_url}/blog/{article_data['id']}"
+        a.href = f"{root_url}/articles/{article_data['id']}"
         h1.appendChild(a)
 
         # create text
@@ -51,16 +51,9 @@
   <body onload="brython(1)">
     <header>
     </header>
-    <nav>
-      <a href="/blog">Blog</a>
-      <a href="/portfolio">Portfolio</a>
-      <a href="/photos">Photos</a>
-      <a href="/audio">Audio</a>
-    </nav>
+    {% include "nav/nav.html" %}
     <div id="articles">
     </div>
-    <div id="return">
-      <a href="/">< Return to the Park</br></a>
-    </div>
+    {% include "nav/return.html" %}
   </body>
 </html>

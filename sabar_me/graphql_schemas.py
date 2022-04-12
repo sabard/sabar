@@ -10,8 +10,12 @@ class Article(SQLAlchemyObjectType):
 class Query(graphene.ObjectType):
     ping = graphene.String()
 
-    article = graphene.Field(Article)
+    article = graphene.Field(Article, id=graphene.ID(required=True))
     articles = graphene.List(Article)
+
+    def resolve_article(self, info, id):
+        query = Article.get_query(info)
+        return query.get(id)
 
     def resolve_articles(self, info):
         query = Article.get_query(info)

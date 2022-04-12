@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>Sabar's Blog</title>
+    {% include "global_imports.html" %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/other.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/writing.css') }}">
+
+    <script type="text/python3">
+      from browser import document, html
+      from graphqlclient import GraphQLClient
+
+      root_url = "http://localhost:5000"
+
+      client = GraphQLClient(f"{root_url}/graphql")
+      article_data = client.execute(""" {
+        article(id: {{ article_id }}) {
+          id
+          title
+          text
+        }
+      }""")["data"]["article"]
+
+      article_div = document.getElementById("article")
+
+      # create title
+      h1 = document.createElement("h1")
+      title_text = document.createTextNode(article_data["title"]);
+      h1.title = article_data["title"]
+      h1.appendChild(title_text);
+
+      # create text
+      text = document.createElement("p")
+      text_text = document.createTextNode(article_data["text"])
+      text.appendChild(text_text)
+
+      # create article
+      article = document.createElement("article")
+      article.appendChild(h1)
+      article.appendChild(text)
+
+      # add to articles div
+      article_div.appendChild(article)
+    </script>
+  </head>
+  <body onload="brython(1)">
+    <header>
+    </header>
+    {% include "nav/nav.html" %}
+    <div id="article">
+    </div>
+    {% include "nav/return.html" %}
+  </body>
+</html>

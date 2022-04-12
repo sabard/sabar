@@ -11,15 +11,8 @@
   <body onload="brython(1)">
     <header>
     </header>
-    <nav>
-      <a href="/blog">Blog</a>
-      <a href="/portfolio">Portfolio</a>
-      <a href="/photos">Photos</a>
-      <a href="/audio">Audio</a>
-    </nav>
-    <div id="return">
-        <a href="/">< Return to the Park</br></a>
-    </div>
+    {% include "nav/nav.html" %}
+    {% include "nav/return.html" %}
   </body>
 </html>
 
