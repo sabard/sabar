@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <title>Sabar's Blog</title>
+    {% include "global_imports.html" %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/other.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/blog.css') }}">
+
+    <script type="text/python3">
+      from browser import document, html
+      from graphqlclient import GraphQLClient
+
+      root_url = "http://localhost:5000"
+
+      client = GraphQLClient(f"{root_url}/graphql")
+      articles = client.execute(""" {
+        articles {
+          id
+          title
+          text
+        }
+      }""")["data"]["articles"]
+
+      articles_div = document.getElementById("articles")
+
+
+      for article_data in articles:
+
+        # create title
+        h1 = document.createElement("h1")
+        a = document.createElement("a")
+        title_text = document.createTextNode(article_data["title"]);
+        a.appendChild(title_text);
+        a.title = article_data["title"]
+        a.href = f"{root_url}/blog/{article_data['id']}"
+        h1.appendChild(a)
+
+        # create text
+        text = document.createElement("p")
+        text_text = document.createTextNode(article_data["text"])
+        text.appendChild(text_text)
+
+        # create article
+        article = document.createElement("article")
+        article.appendChild(h1)
+        article.appendChild(text)
+
+        # add to articles div
+        articles_div.appendChild(article)
+    </script>
+  </head>
+  <body onload="brython(1)">
+    <header>
+    </header>
+    <nav>
+      <a href="/blog">Blog</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/photos">Photos</a>
+      <a href="/audio">Audio</a>
+    </nav>
+    <div id="articles">
+    </div>
+    <div id="return">
+      <a href="/">< Return to the Park</br></a>
+    </div>
+  </body>
+</html>

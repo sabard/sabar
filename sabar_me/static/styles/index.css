@@ -7,21 +7,8 @@ body {
   background-blend-mode: multiply;
 }
 
-nav {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    width: fit-content;
-    padding: 7px;
-    text-align: center;
-    background-color: #9D872D;
-    font-size: 24px;
-}
-
 nav a {
-  color: #6EAEbC;
-  text-decoration: none;
-  padding: 10px;
+  color: #6EAEbC !important;
 }
 
 #welcome  {
@@ -29,6 +16,7 @@ nav a {
   bottom: 30px;
   left: 30px;
   width: fit-content;
+  height:  30px;
   padding:  7px;
   background-color: #6EAEbC;
   font-size: 30px;

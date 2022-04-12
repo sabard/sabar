@@ -1,1 +1,9 @@
-Flask
+brython
+flask
+flask-cors
+flask-graphql
+flask-migrate
+flask-sqlalchemy
+graphene-sqlalchemy
+graphene-sqlalchemy-filter
+graphqlclient
