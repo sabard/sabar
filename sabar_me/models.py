@@ -6,11 +6,30 @@ from sabar_me import app
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
+
+# class Tag(db.Model):
+#     __tablename__ = "tag"
+#     id = db.Column(db.Integer, primary_key=True)
+#     name = db.Column(db.String)
+
+
+# class Item(db.Model):
+#     __tablename__ = "item"
+#     id = db.Column(db.Integer, primary_key=True)
+
+
+# class ItemTag(db.Model):
+#     tag_id = db.Column(db.Integer)
+#     item_id = db.Column(db.Integer)
+
+
+# class Article(Item):
 class Article(db.Model):
     __tablename__ = "article"
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String)
     text = db.Column(db.Text)
+    # tags = db.Column(db.String)
 
 def create_article(article_data, commit=True):
     article = Article(

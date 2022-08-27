@@ -16,7 +16,7 @@ nav a {
 }
 
 #return  {
-  position:  absolute;
+  position: fixed;
   bottom: 30px;
   left: 30px;
   width: fit-content;
@@ -30,4 +30,8 @@ nav a {
 #return a:link, #return a:visited {
   text-decoration: none;
   color:  #587E52;
+}
+
+.body {
+  padding-bottom: 30px;
 }

@@ -5,18 +5,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/other.css') }}">
 
     <script type="text/python3">
-      from browser import document, ajax
-      import json
-      import warnings
-
-      def show_results(response):
-          if response.status==200:  # If the request was successful
-              document["result"].html = response.text
-          else:
-              warnings.warn(response.text)
-
-
-      document["predict_button"].bind("click", get_prediction)
+      print("Python!")
     </script>
   </head>
   <body onload="brython(1)">

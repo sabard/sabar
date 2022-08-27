@@ -1,11 +1,21 @@
 import graphene
 from graphene_sqlalchemy import SQLAlchemyObjectType
+from graphene_sqlalchemy_filter import FilterableConnectionField, FilterSet
 
 from .models import Article as ArticleModel
 
 class Article(SQLAlchemyObjectType):
     class Meta:
         model = ArticleModel
+
+# class ArticleFilter(FilterSet):
+#     class Meta:
+#         model = Article
+#         fields = {
+#             "id": [...],
+#             "title": [...],
+#             "title": [...],
+#         }
 
 class Query(graphene.ObjectType):
     ping = graphene.String()

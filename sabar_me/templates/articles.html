@@ -4,6 +4,7 @@
     {% include "global_imports.html" %}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/other.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/writing.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/articles.css') }}">
 
     <script type="text/python3">
       from browser import document, html
@@ -20,8 +21,7 @@
         }
       }""")["data"]["articles"]
 
-      articles_div = document.getElementById("articles")
-
+      articles_ol = document.getElementById("articles_ol")
 
       for article_data in articles:
 
@@ -35,7 +35,7 @@
         h1.appendChild(a)
 
         # create text
-        text = document.createElement("p")
+        text = document.createElement("span")
         text_text = document.createTextNode(article_data["text"])
         text.appendChild(text_text)
 
@@ -43,9 +43,11 @@
         article = document.createElement("article")
         article.appendChild(h1)
         article.appendChild(text)
+        li = document.createElement("li")
+        li.appendChild(article)
 
         # add to articles div
-        articles_div.appendChild(article)
+        articles_ol.appendChild(li)
     </script>
   </head>
   <body onload="brython(1)">
@@ -53,6 +55,8 @@
     </header>
     {% include "nav/nav.html" %}
     <div id="articles">
+      <ol id="articles_ol">
+      </ol>
     </div>
     {% include "nav/return.html" %}
   </body>
