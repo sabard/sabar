@@ -45,3 +45,8 @@ def create_article(article_data, commit=True):
             db.session.rollback()
             raise e
     return article
+
+class Image(db.Model):
+    __tablename__ = "image"
+    id = db.Column(db.Integer, primary_key=True)
+    key = db.Column(db.Text)
