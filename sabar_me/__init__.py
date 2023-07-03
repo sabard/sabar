@@ -6,5 +6,3 @@ app = Flask(__name__)
 app.config.from_object(settings)
 
 from . import routes  # noqa: E402, F401
-
-

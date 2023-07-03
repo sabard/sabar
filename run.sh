@@ -1,2 +1,2 @@
 set -a && . ./variables-dev.env && set +a
-flask run
+gunicorn --bind 0.0.0.0:5000 sabar_me:app
