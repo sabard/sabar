@@ -6,21 +6,13 @@ body {
   background-blend-mode: multiply;
   background-size: cover;
   background-position: center;
+  font-family: serif;
+}
+
+nav {
+  color: #6EAEbC !important;
 }
 
 nav a {
   color: #6EAEbC !important;
-}
-
-#welcome  {
-  position:  absolute;
-  bottom: 30px;
-  left: 30px;
-  width: fit-content;
-  height:  30px;
-  padding:  7px;
-  background-color: #6EAEbC;
-  font-size: 30px;
-  text-align: right;
-  color: #9D872D;
 }

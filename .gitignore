@@ -1,3 +1,7 @@
+# Environment
+*.env
+
+# Site content (should be moved to db eventually)
 writing/
 
 # SQLite

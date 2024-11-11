@@ -1,0 +1,63 @@
+<html>
+<head>
+  <title>Sabar's Projects</title>
+  {% include "global_imports.html" %}
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/projects.css') }}">
+
+
+  <script type="text/python3">
+    print("Python!")
+  </script>
+</head>
+<body onload="brython(1)">
+  <header>
+  </header>
+  {% include "nav/nav.html" %}
+
+  </br>
+
+  <h1>Tools</h1>
+
+  <div class="container">
+    {% for i in range(0, tools|length, 3) %}
+    <div class="row">
+      {% for tool in tools[i:i+3] %}
+      <div class="col mb-3">
+        <div class="card">
+          <h2>{{tool.subcategory or ""}}</h2>
+          <img src="{{tool.image_link}}">
+          <p>{{tool.title}}</p>
+          <a href="/project/{{tool.slug}}" class="stretched-link"></a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+
+<!--     <h1>Builds</h1>
+
+  <div class="container">
+    {% for i in range(0, builds|length, 2) %}
+    <div class="row">
+      {% for build in builds[i:i+2] %}
+      <div class="col mb-3">
+        <div class="card">
+          <h2>{{build.subcategory or ""}}</h2>
+          <img src="{{build.image_link}}">
+          <p>{{build.title}}</p>
+          <a href="/project/{{build.slug}}" class="stretched-link"></a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+  </div> -->
+
+
+  {% include "nav/return.html" %}
+
+  <link rel="javascript" type="text/javascript" href="{{ url_for('static',filename='js/bootstrap.min.js') }}">
+</body>
+</html>

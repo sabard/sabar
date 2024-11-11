@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Sabar's Projects</title>
+    {% include "global_imports.html" %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/about.css') }}">
+
+
+    <script type="text/python3">
+      print("Python!")
+    </script>
+  </head>
+  <body onload="brython(1)">
+    <header>
+    </header>
+    {% include "nav/nav.html" %}
+
+    </br>
+
+
+
+    <div class="heading">
+      <h1>About</h1>
+    </div>
+    <div class="card">
+
+      <p>Hi! Welcome to my personal site.</p>
+
+      <p>This site is self-hosted using <a href="https://github.com/sabard/provision-it">provision-it</a> and the code for the site can be found here: <a href="https://github.com/sabard/sabar.me">https://github.com/sabard/sabar.me</a></p>
+
+      <p>The site is a work in progress and will eventually be where I share all my projects, writing, and other media.</p>
+
+      <p>- Sabar (he/they)</p>
+    </div>
+
+    {% include "nav/return.html" %}
+
+    <link rel="javascript" type="text/javascript" href="{{ url_for('static',filename='js/bootstrap.min.js') }}">
+  </body>
+</html>

@@ -14,3 +14,10 @@ echo sabar_me > .python-version
 docker build . -t sabar_me
 docker run -p 5000:5000 -d sabar_me
 ```
+
+## Database Migrations
+
+```bash
+flask db migrate
+flask db upgrade
+```

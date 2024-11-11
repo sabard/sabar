@@ -67,6 +67,8 @@ promise==2.3
     #   graphql-core
     #   graphql-relay
     #   graphql-server-core
+python-slugify==8.0.4
+    # via -r requirements.in
 rx==1.6.1
     # via graphql-core
 singledispatch==3.7.0
@@ -87,6 +89,8 @@ sqlalchemy==1.4.35
     #   flask-sqlalchemy
     #   graphene-sqlalchemy
     #   graphene-sqlalchemy-filter
+text-unidecode==1.3
+    # via python-slugify
 werkzeug==2.1.1
     # via flask
 

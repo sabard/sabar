@@ -8,3 +8,4 @@ graphene-sqlalchemy
 graphene-sqlalchemy-filter
 graphqlclient
 gunicorn
+python-slugify
